@@ -1,1 +1,1 @@
-# maru_butsu.quize
+# maru_batsu.quize

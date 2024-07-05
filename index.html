@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <mate name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js"></script>
+        <title>まるばつクイズ</title>
+</head>
+<style>
+    html,
+    body {
+        font-family: sans-serif;
+        background-color: rgb(250, 244, 233);
+    }
+
+    main {
+        /* max-width: 600px; */
+        margin: auto;
+    }
+
+    h1 {
+        margin: auto;
+        text-align: center;
+        color: rgb(30, 32, 130);
+        font-size: 40px;
+        width: 600px;
+        /* height: 63px; */
+        border-bottom: solid 5px rgb(105, 85, 252);
+    }
+
+    .center {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    #quiz-text {
+        font-size: 40px;
+        color: rgb(33, 84, 122);
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 16px;
+        width: 600px;
+        display: flex;
+        align-items: center;
+    }
+
+    #quiz-button {
+        margin: auto;
+        margin-top: 16px;
+        display: flex;
+        height: 270px;
+    }
+
+    #quiz-button>button {
+        text-align: center;
+        font-size: 50px;
+        writing-mode: vertical-rl;
+        flex: 1;
+        background-color: #ffffff;
+        border-radius: 10px;
+        width: 120px;
+    }
+
+    #button-yes {
+        border: 5px solid #03a262;
+    }
+
+    #button-no {
+        border: 5px solid #0325a2;
+    }
+
+    #finish {
+        text-align: center;
+        font-size: 40px;
+        color: rgb(219, 90, 168);
+    }
+
+    #judgement {
+        /*text-align: center;*/
+        font-size: 35px;
+        color: rgb(131, 39, 5);
+    }
+
+    #comment {
+        font-size: 25px;
+        color: rgb(26, 8, 2);
+    }
+
+    #next {
+        text-align: center;
+        color: #373508;
+        font-size: 26px;
+        height: 60px;
+        width: 200px;
+        flex: 1;
+        background-color: #ffffff;
+        border-radius: 10px;
+        border: 3px solid #fdd628;
+        margin: auto;
+        display: flex;
+        width: 600px;
+    }
+
+    #end {
+        text-align: center;
+        color: #373508;
+        font-size: 24px;
+        flex: 1;
+        background-color: #ffffff;
+        border-radius: 10px;
+        border: 2px solid #fc935f;
+        float: left;
+    }
+
+    .last {
+        margin: auto;
+        display: flex;
+        width: 700px;
+    }
+
+    #button-no[disabled] {
+        color: black;
+    }
+
+    #button-yes[disabled] {
+        color: black;
+    }
+</style>
+
+<body onload="showQuiz()">
+    <main>
+        <h1 id="title">まるばつクイズ</h1>
+        <div class="center">
+            <div id="quiz-button">
+                <button id="button-no" onclick="submit(0)">× 間違い</button>
+                <div id="quiz-text"></div>
+                <button id="button-yes" onclick="submit(1)">○ 正しい</button>
+            </div>
+        </div>
+        <div id="judgement"></div>
+        <div id="comment"></div>
+        <button id="next" onclick="next_quiz()">次の問題へ</button>
+        <div class="last">
+            <div id="finish"></div>
+            <button id="end" onclick="reload()">終了する</button>
+        </div>
+    </main>
+</body>
+
+</html>
